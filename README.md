@@ -82,12 +82,14 @@ export const layout: RunTimeLayoutConfig = ({ initialState }) => {
 
 如果销毁页面操作，以往我们使用 `history.goBack()`。
 
-此时会造成缓存依旧存在（因为他和切换标签页没有区别），页面上的标签页仍然存在，点击后表单内数据也存在。
+此时会造成缓存依旧存在（因为他和切换标签页没有区别），页面上的标签页仍然存在，点击切换后表单内数据依然存在。
 
 我们需要使用 `closeCurrent()` 解决该问题。
 
 例：
 ```base
+import usePanelTab from '@/components/PanelTabsKeepAlive/PanelTabs/PanelTabHook'
+
 const Index: React.FC = () => {
   const { closeCurrent } = usePanelTab()
   const handleFinish = (data: API.Article) => (
@@ -144,7 +146,7 @@ const Index: React.FC<{ activateCount: number }> = (props) => {
   - index.tsx // 处理横向滑动及所有的标签的渲染工作
   - PanelTab.tsx // 单个的标签UI及操作功能
   - PanelTabHook.tsx // 提供标签关闭、删除等功能的hooks方法
-- index.tsx // KeepAlive 缓存功能及展示所以标签，
+- index.tsx // KeepAlive 缓存功能及展示所有标签
 - plugin.ts // umi插件，自动帮助我们在路由中增加 wrappers 高阶组件。
 ```
 
