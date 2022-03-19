@@ -164,11 +164,11 @@ const Index: React.FC<{ activateCount: number }> = (props) => {
 <ProLayout/>
 ```
 
-虽然在每一个页面使用`<KeepAlive>`可以完成需求,但是现在我们已经完成了部分模块再次修改代码较有风险。那有没有能力让umi帮我增加呢？ 
+虽然在每一个页面使用`<KeepAlive />`可以完成需求,但是现在我们已经完成了部分模块，再次修改代码较有风险。那有没有能力让umi帮我增加呢？ 
 
-众所周知 umi 使用 react-router。我们可以使用高阶组件 withRouter 解决。只需在 umi 的路由routes.ts中声明 [wrappers](https://umijs.org/docs/routing#wrappers) 即可。
+众所周知 umi 使用 react-router。我们可以使用高阶组件 withRouter 解决。只需在 umi 的路由 routes.ts 中声明 [wrappers](https://umijs.org/docs/routing#wrappers) 即可。
 
-但是那么多页面我们一个个去修改是很浪费时间的，那我们可以用 umi plugins 自动帮我们添加。详细代码见：`/PanelTabsKeepAlive/plugin.ts`，可以看到 `src/.umi/core/routes.ts`
+但是那么多页面我们一个个去修改是很浪费时间的，那我们可以用 umi plugins 自动帮我们添加。详细代码见：`/PanelTabsKeepAlive/plugin.ts`，可以看到 `src/.umi/core/routes.ts`:
 ```base
 "routes": [
   {
