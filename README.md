@@ -42,7 +42,7 @@ export const layout: RunTimeLayoutConfig = ({ initialState }) => {
   layout: 'side',
   fixedHeader: true,
   
-// 增加样式，移动端下增加为面包屑增加边距
+// 增加样式，移动端下为面包屑增加边距
 + src/global.less
 @media screen and (max-width: @screen-md) {
   body .ant-pro-global-header-collapsed-button {
@@ -63,7 +63,7 @@ export const layout: RunTimeLayoutConfig = ({ initialState }) => {
 可以看到此时面包屑是重复的，我们可以修改 `src/pages` 每一个的 `<PageContainer breadcrumbRender={false}>`
 
 
-5. 最终展现 (可以看到面包屑和标签固定在页面上)
+5. 最终展现 (面包屑和标签固定在页面上)
 
 ##### 桌面端
  ![img_3.png](./img_3.png)
