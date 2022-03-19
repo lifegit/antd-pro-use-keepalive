@@ -75,7 +75,7 @@ export const layout: RunTimeLayoutConfig = ({ initialState }) => {
 ## 额外场景
 增加缓存后有许多场景需要我们调整。
 
-##### 编辑页
+##### 编辑、新增页
 当我们在编辑页、新增页完成时：
 
 > 跳转到 Result 结果页则无需关注。
